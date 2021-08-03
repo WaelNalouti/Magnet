@@ -1,0 +1,77 @@
+.orderTable {
+  padding: 20px 30px;
+  background-color: #fff;
+  margin: 20px 0px;
+  border-radius: 5px;
+}
+
+.orderTable__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: fit-content;
+}
+
+.orderTable__nav--item {
+  margin-right: 40px;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  background: none;
+  border-bottom: 3px solid rgba(0, 42, 132, 0);
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+
+.nav--item--checked {
+  border-bottom: 3px solid #002984;
+}
+
+.table {
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.tableRow__custom {
+  cursor: pointer;
+  background-color: #f6f8fc !important;
+}
+
+.tableRow__custom:hover {
+  background-color: #ecfbf6 !important;
+}
+
+.tableCell__keyValue {
+  font-weight: 500 !important;
+}
+
+.orderTable--status {
+  cursor: pointer !important;
+}
+
+/* if (status === "Remboursé") {
+      setStatusColor("status--rembourse");
+    } else if (status === "Non remboursé") {
+      setStatusColor("status--nonRembourse");
+    } else if (status === "Livré") {
+      setStatusColor("status--livre");
+    } else if (status === "Non livré") {
+      setStatusColor("status--nonLivre");
+    } */
+
+/* style for "Remboursé" status */
+.statusStyle9 {
+  background-color: #b2fab4 !important;
+  color: #087f23 !important;
+}
+
+/* style for "Non remboursé" status*/
+.statusStyle13 {
+  background-color: #fff59d !important;
+  color: #c17900 !important;
+}
+/* style for "à récupérer" status*/
+.statusStyle11 {
+  background-color: #ff7961 !important;
+  color: #ba000d !important;
+}

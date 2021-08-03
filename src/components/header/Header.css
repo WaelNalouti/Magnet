@@ -1,0 +1,68 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 30px;
+  border-bottom: 1px solid lightgray;
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  z-index: 1000;
+}
+.header__logo {
+  flex: 0.3;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo__text {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2dae53;
+}
+
+.header__data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.header__data__agency {
+  flex: 1;
+  font-size: small;
+  text-align: right;
+  font-weight: 600;
+  padding: 0px 70px;
+}
+
+.header__data__user {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.header__data__user--info {
+  padding: 0px 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.user--info__username {
+  font-weight: 500;
+  font-size: small;
+}
+
+.user--info__userrole {
+  font-size: smaller;
+  color: gray;
+}
+
+.user--info--avatar {
+  width: 35px !important;
+  height: 35px !important;
+}

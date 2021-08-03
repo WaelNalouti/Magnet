@@ -1,0 +1,69 @@
+.addColis {
+  width: 100%;
+  height: 100vh;
+  padding: 20px 60px;
+}
+
+.addColis__title {
+  width: fit-content;
+  margin-top: 20px;
+}
+
+.addColis__form {
+  margin: 20px 0px;
+}
+
+.form__section {
+  margin: 30px 0px;
+  text-align: left;
+  padding: 30px;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.form__section__title {
+  font-size: 21px;
+  font-weight: 500;
+  padding: 0px 5px;
+  margin-bottom: 30px;
+}
+
+.form__section__subsection {
+  margin-bottom: 20px;
+}
+
+.form__section__subtitle {
+  margin-bottom: 20px;
+}
+
+.form__section__subsection__divider {
+  width: 60%;
+  display: flex !important;
+}
+
+.form__field {
+  margin-bottom: 15px !important;
+  margin-right: 20px !important;
+  width: 100%;
+}
+
+.form__section__bottom {
+}
+
+.form__description {
+  font-size: smaller;
+  color: grey;
+  padding: 5px 0px;
+}
+
+.form__submit {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.form__submit--cta {
+  margin-right: 20px !important;
+  text-transform: none !important;
+}

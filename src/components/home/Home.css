@@ -1,0 +1,24 @@
+.home {
+  width: 100%;
+  height: 100vh;
+  padding: 20px 60px;
+}
+
+.home__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home__header--cta {
+  font-size: small !important;
+  text-transform: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.home__header--cta__icon {
+  margin-right: 5px;
+  margin-left: -7px;
+}
