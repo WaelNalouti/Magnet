@@ -75,3 +75,18 @@
   background-color: #ff7961 !important;
   color: #ba000d !important;
 }
+
+.loader {
+  overflow-y: hidden;
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader p {
+  font-weight: 600;
+  margin: 10px;
+}

@@ -1,9 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { rows } from "../../tempData";
-
 const initialState = {
-  ordersList: rows,
+  ordersList: [],
 };
 
 export const orderSlice = createSlice({

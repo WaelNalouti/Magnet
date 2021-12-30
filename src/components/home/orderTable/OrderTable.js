@@ -1,9 +1,52 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./OrderTable.css";
 import Search from "./search/Search";
 import Table from "./table/Table";
+
+//Redux
+import { useSelector } from "react-redux";
+import { selectOrders } from "../../../features/orders/ordersSlice";
+import { CircularProgress } from "@material-ui/core";
+
 function OrderTable() {
   const [navChecked, setNavChecked] = useState("all");
+  const [data, setData] = useState([]);
+
+  //get rows from redux
+  const rows = useSelector(selectOrders);
+
+  useEffect(() => {
+    function filterRows() {
+      if (navChecked === "all") {
+        setData(rows);
+      } else if (navChecked === "payed") {
+        let temp = [];
+        rows.forEach((row) => {
+          if (row.status === "Remboursé") {
+            temp.push(row);
+            setData(temp);
+          }
+        });
+      } else if (navChecked === "notPayed") {
+        let temp = [];
+        rows.forEach((row) => {
+          if (row.status === "Non Remboursé") {
+            temp.push(row);
+            setData(temp);
+          }
+        });
+      } else if (navChecked === "notDelivred") {
+        let temp = [];
+        rows.forEach((row) => {
+          if (row.status === "à récupérer") {
+            temp.push(row);
+            setData(temp);
+          }
+        });
+      }
+    }
+    filterRows();
+  }, [data, navChecked, rows]);
 
   return (
     <div className="orderTable">
@@ -20,13 +63,13 @@ function OrderTable() {
         </button>
         <button
           className={`orderTable__nav--item ${
-            navChecked === "delivered" ? "nav--item--checked" : ""
+            navChecked === "notPayed" ? "nav--item--checked" : ""
           }`}
           onClick={() => {
-            setNavChecked("delivered");
+            setNavChecked("notPayed");
           }}
         >
-          Livrés
+          Non Remboursés
         </button>
         <button
           className={`orderTable__nav--item ${
@@ -38,11 +81,20 @@ function OrderTable() {
         >
           Remboursés
         </button>
+        <button
+          className={`orderTable__nav--item ${
+            navChecked === "notDelivred" ? "nav--item--checked" : ""
+          }`}
+          onClick={() => {
+            setNavChecked("notDelivred");
+          }}
+        >
+          A récupérer
+        </button>
       </div>
 
       <Search />
-
-      <Table />
+      <Table rows={data} />
     </div>
   );
 }

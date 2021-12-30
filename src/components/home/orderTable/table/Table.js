@@ -9,10 +9,6 @@ import TablePagination from "@material-ui/core/TablePagination";
 import TableRow from "@material-ui/core/TableRow";
 import { Chip } from "@material-ui/core";
 
-//Redux
-import { useSelector } from "react-redux";
-import { selectOrders } from "../../../../features/orders/ordersSlice";
-
 const columns = [
   { id: "Ref Colis", label: "Ref Colis", minWidth: 170 },
   { id: "Client", label: "Client", minWidth: 100 },
@@ -47,7 +43,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function StickyHeadTable() {
+export default function StickyHeadTable({ rows }) {
   const classes = useStyles();
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -60,9 +56,6 @@ export default function StickyHeadTable() {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
-
-  //get rows from redux
-  const rows = useSelector(selectOrders);
 
   return (
     <div className="table">
@@ -91,27 +84,26 @@ export default function StickyHeadTable() {
                     className="tableRow__custom"
                     hover
                     role="checkbox"
-                    tabIndex={-1}
-                    key={row.ref}
+                    key={row?.ref}
                   >
                     <TableCell className="tableCell__keyValue">
-                      {row.ref}
+                      {row?.ref}
                     </TableCell>
                     <TableCell className="tableCell__keyValue">
-                      {row.client}
+                      {row?.client}
                     </TableCell>
                     <TableCell className="tableCell__keyValue">
-                      {row.cinClient}
+                      {row?.cinClient}
                     </TableCell>
-                    <TableCell align="right">{row.date}</TableCell>
+                    <TableCell align="right">{row?.date}</TableCell>
                     <TableCell className="tableCell__keyValue" align="right">
-                      {row.prix}
+                      {row?.prix}
                     </TableCell>
                     <TableCell align="center" className="tableCell__keyValue">
                       <Chip
                         size="small"
-                        label={row.status}
-                        className={`statusStyle${row.status
+                        label={row?.status}
+                        className={`statusStyle${row?.status
                           .split("")
                           .length.toString()} orderTable--status`}
                       />
