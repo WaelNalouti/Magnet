@@ -15,7 +15,7 @@ The goal of this project is to try to build a php rest api and work with SQL.
     │   │   └── order           # Endpoints to execute given crud ops like create and read
     │   │       ├── create.php
     │   │       └── read.php
-    │   ├── config              # Contains databes config file
+    │   ├── config              # Contains database config file
     │   │   └── Databese.php    # Contains database connection method `connect()`
     │   └── models
     │       └── Order.php       # DAO_like ??
